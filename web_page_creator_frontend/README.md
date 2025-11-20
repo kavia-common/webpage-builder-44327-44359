@@ -1,49 +1,56 @@
-# lightningjs
+# Ocean Page Builder (LightningJS + Blits)
 
-### lightningjs
+Modern web page creator UI following the Ocean Professional theme.
 
+## Features
+- Top bar, left sidebar (Tools + Templates), central canvas, right properties panel
+- Add blocks: Text, Button, Image, Section
+- Select and move blocks with arrow keys (8px nudge)
+- Edit properties from the Properties panel:
+  - Text: content, size, color, alignment (toggle with Enter)
+  - Button: label, size, colors (toggle primary/secondary with Enter)
+  - Section/Image: size adjustments with Up/Down
+- Keyboard shortcuts:
+  - Delete/Backspace: remove selected element
+  - Arrow keys: nudge selected element
+  - Enter: cycle a primary property (align for text, colors for button)
+  - Cmd/Ctrl+Z: undo (basic)
+- Session persistence using localStorage
+- Sample templates: Hero and Two-column
+- Env placeholders via import.meta.env (no backend dependency)
 
-Welcome to the _lightningjs_ Lightning 3 Blits App!
-
-### Getting started
-
-Follow the steps below to get your Lightning 3 Blits App up and running in no time.
-
-#### IDE setup
-
-It is highly recommended to install the Blits [VS-code extension](https://marketplace.visualstudio.com/items?itemName=LightningJS.lightning-blits) which will give you template highlighting and improved autocompletion.
-
-#### Project setup
-
-Run the following command to install the dependencies of your App:
-
-```sh
+## Getting started
+```bash
 npm install
+npm run dev # runs Vite dev server on port 3000
 ```
+Open the preview URL (port 3000) to use the builder.
 
-#### Build and run in development mode
+## Usage
+- Use Sidebar > Tools to add elements to the Canvas.
+- Use Sidebar > Templates to load sample layouts.
+- Select a block on Canvas with Enter, then:
+  - Arrow keys to move
+  - Delete/Backspace to remove
+  - Enter to cycle an important property (align/color)
+  - Up/Down to adjust size (font size for text/button; dimensions for image/section)
+- Properties Panel shows the current selection and live values.
 
-Run your App in development mode:
+## Environment variables (optional)
+We read these if present, otherwise ignore:
+- VITE_API_BASE
+- VITE_BACKEND_URL
+- VITE_FRONTEND_URL
+- VITE_WS_URL
+- VITE_NODE_ENV
+- VITE_FEATURE_FLAGS
+- VITE_EXPERIMENTS_ENABLED
 
-```sh
-npm run dev
-```
+Do not commit real secrets. For reference only.
 
-This command uses Vite to fire up a local server, with Hot Reloading support. Visit the provided link in your web browser to see the App in action.
+## Tech
+- Lightning 3 + Blits
+- Vite dev server
 
-#### Build the App for production
-
-Create an optimized and minified version of your App:
-
-```sh
-npm run build
-```
-
-This will create a production version of the app in the `dist` folder.
-
-
-### Resources
-
-- [Blits documentation](https://lightningjs.io/v3-docs/blits/getting_started/intro.html) - official documentation
-- [Blits Example App](https://blits-demo.lightningjs.io/?source=true) - a great reference to learn by example
-- [Blits Components](https://lightningjs.io/blits-components.html) - off-the-shelf, basic and performant reference components
+## Notes
+- This is the initial version. Drag-and-drop and richer editing will be added later.
